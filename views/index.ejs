@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Express API methods</title>
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+    <body>
+        <div class="flex-container">
+            <div class="container">
+                <div class="textarea">
+                    <% if(locals.data) { %>
+                        <%= data %>
+                    <% } else { %>
+                        No data yet...
+                    <% } %>
+                </div>
+                <form method="post">
+                    <div class="flex-col-container">
+                        <input class="input-text" type="text" name="id" id="id" placeholder="Secret ID">
+                        <input class="input-text" type="number" name="emscore" id="emscore" placeholder="Secret embarrasment score">
+                        <input class="input-text" type="text" name="secret" id="secret" placeholder="Secret">
+                    </div>
+
+                    <div class="flex-row-container">
+                        <input class="btn get" type="submit" value="GET" formaction="/get-secret">
+                        <input class="btn post" type="submit" value="POST" formaction="/post-secret">
+                        <input class="btn put" type="submit" value="PUT" formaction="/put-secret">
+                        <input class="btn patch" type="submit" value="PATCH" formaction="/patch-secret">
+                        <input class="btn delete" type="submit" value="DELETE" formaction="/delete-secret">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
